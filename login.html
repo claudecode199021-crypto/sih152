@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Social Lens | NTRO — AI-Driven Social Media Analytics</title>
+  <link rel="stylesheet" href="css/ux4g.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body.welcome-body {
+      background: linear-gradient(135deg, #070a44 0%, #1a237e 50%, #0d1257 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      color: white;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+      background: white;
+      color: var(--gray-900);
+      border-radius: var(--radius-2xl);
+      padding: 2.5rem 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    body.dark .login-container {
+      background: #151c2e;
+      color: white;
+      border-color: #283549;
+    }
+    .brand-box {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .brand-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #ff9933;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 4px 12px rgba(255, 153, 51, 0.4);
+    }
+    .brand-box h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1a237e;
+      letter-spacing: -0.02em;
+    }
+    body.dark .brand-box h1 { color: white; }
+    .brand-box p {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+      color: #334155;
+    }
+    body.dark .form-label { color: #cbd5e1; }
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid #cbd5e1;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      transition: all var(--transition-fast);
+      font-family: inherit;
+    }
+    body.dark .form-input {
+      background: #1e293b;
+      border-color: #334155;
+      color: white;
+    }
+    .form-input:focus {
+      border-color: #1a237e;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.15);
+    }
+    .login-btn {
+      width: 100%;
+      padding: 0.875rem;
+      border-radius: var(--radius-lg);
+      background: #1a237e;
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+    }
+    .login-btn:hover {
+      background: #141b6b;
+      transform: translateY(-1px);
+    }
+    .demo-credentials {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed #e2e8f0;
+    }
+    body.dark .demo-credentials { border-top-color: #334155; }
+    .demo-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .demo-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    .demo-chip {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 0.5rem 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--transition-fast);
+    }
+    body.dark .demo-chip {
+      background: #1e293b;
+      border-color: #334155;
+      color: #cbd5e1;
+    }
+    .demo-chip:hover {
+      background: #ff9933;
+      color: white;
+      border-color: #ff9933;
+    }
+    .error-alert {
+      background: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #dc2626;
+      padding: 0.625rem 0.875rem;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .security-notice {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="welcome-body">
+
+  <div class="login-container">
+    <div class="brand-box">
+      <div class="brand-icon">👁️</div>
+      <h1>Social Lens</h1>
+      <p>National Technical Research Organisation (NTRO)</p>
+      <p style="font-size: 0.7rem; color: #ff9933; font-weight: 600; margin-top: 0.25rem;">FOR OFFICIAL USE ONLY</p>
+    </div>
+
+    <div id="error-box" class="error-alert" role="alert"></div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" class="form-input" placeholder="Enter username (admin, analyst, viewer)" required autocomplete="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="Enter password (e.g. admin123)" required autocomplete="current-password">
+      </div>
+
+      <div class="form-group">
+        <label for="role" class="form-label">Select Analyst Role</label>
+        <select id="role" class="form-input">
+          <option value="admin">Administrator (Full Access)</option>
+          <option value="analyst" selected>Intelligence Analyst (Standard)</option>
+          <option value="viewer">Executive Viewer (Read-Only)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="login-btn">Sign In to Dashboard →</button>
+    </form>
+
+    <div class="demo-credentials">
+      <div class="demo-title">⚡ Quick 1-Click Demo Login</div>
+      <div class="demo-btn-grid">
+        <button type="button" class="demo-chip" onclick="quickLogin('admin', 'admin123', 'admin')">🔑 Admin</button>
+        <button type="button" class="demo-chip" onclick="quickLogin('analyst', 'analyst123', 'analyst')">📊 Analyst</button>
+        <button type="button" class="demo-chip" onclick="quickLogin('viewer', 'viewer123', 'viewer')">👁️ Viewer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="security-notice">
+    🔒 Social Lens AI Framework v1.0 · Protected System · NTRO Government of India
+  </div>
+
+  <script>
+    // Load saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    // Check if redirecting from explicit logout
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('action') === 'logout') {
+      localStorage.removeItem('socialLensUser');
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    } else if (localStorage.getItem('socialLensUser')) {
+      // Redirect to dashboard if session exists
+      window.location.href = 'index.html';
+    }
+
+    const errorBox = document.getElementById('error-box');
+
+    function showError(msg) {
+      errorBox.textContent = msg;
+      errorBox.style.display = 'block';
+    }
+
+    function quickLogin(user, pass, role) {
+      document.getElementById('username').value = user;
+      document.getElementById('password').value = pass;
+      document.getElementById('role').value = role;
+      authenticate(user, pass, role);
+    }
+
+    function authenticate(userInput, passInput, roleInput) {
+      const user = (userInput || '').trim().toLowerCase();
+      const pass = (passInput || '').trim();
+
+      if (!user || !pass) {
+        showError('Please enter username and password');
+        return;
+      }
+
+      // Valid accounts map (case insensitive for username)
+      const validUsers = {
+        admin: 'admin123',
+        analyst: 'analyst123',
+        viewer: 'viewer123'
+      };
+
+      if (validUsers[user] && validUsers[user] === pass) {
+        const authData = {
+          username: user,
+          role: roleInput || user,
+          token: 'jwt_mock_token_' + Math.random().toString(36).substring(2),
+          loginTime: new Date().toISOString()
+        };
+        localStorage.setItem('socialLensUser', JSON.stringify(authData));
+        window.location.href = 'index.html';
+      } else {
+        showError('Invalid credentials. Use admin / admin123, analyst / analyst123, or viewer / viewer123.');
+      }
+    }
+
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+      authenticate(user, pass, role);
+    });
+  </script>
+</body>
+</html>
